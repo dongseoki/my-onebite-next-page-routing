@@ -1,6 +1,9 @@
+// CSS Module
+import SearchableLayout from "@/components/searchable-layout";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import styles from "./index.module.css";
+import { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,3 +15,7 @@ export default function Home() {
     </>
   );
 }
+
+Home.getLayout = (page: ReactNode) => {
+  return <SearchableLayout>{page}</SearchableLayout>;
+};
