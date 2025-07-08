@@ -1,3 +1,8 @@
+import { useRouter } from "next/router";
+
 export default function Page() {
-  return <div>북 페이지</div>;
+  const router = useRouter();
+  const { id } = router.query;
+  console.log("id : ", id);
+  return <div>북 페이지 {id}</div>;
 }
